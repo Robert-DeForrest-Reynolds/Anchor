@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcmm5cd0nfdum"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ccm41"]
+bg_color = Color(0.158472, 0.158472, 0.158472, 1)
+
+[node name="DialogueEditor" type="PanelContainer"]
+custom_minimum_size = Vector2(800, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ccm41")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="Entries" type="VBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="Entry" type="HBoxContainer" parent="Margin/VBox/Entries"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="CharacterName" type="LineEdit" parent="Margin/VBox/Entries/Entry"]
+custom_minimum_size = Vector2(265, 0)
+layout_mode = 2
+placeholder_text = "Character Name"
+
+[node name="Dialogue" type="TextEdit" parent="Margin/VBox/Entries/Entry"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "I am dialogue"
+wrap_mode = 1
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Margin" type="MarginContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="AddEntry" type="Button" parent="Margin/VBox/Margin"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "+"

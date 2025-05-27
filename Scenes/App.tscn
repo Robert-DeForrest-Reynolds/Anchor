@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://ubnstxxdpkvp"]
+
+[ext_resource type="Script" uid="uid://deu8uflvd5mgj" path="res://Scripts/Core.gd" id="1_3anhv"]
+[ext_resource type="PackedScene" uid="uid://0qg7y5kuiow7" path="res://Scenes/Editor.tscn" id="2_r41ji"]
+[ext_resource type="PackedScene" uid="uid://cx8cleyqrjgxh" path="res://Scenes/Browser.tscn" id="3_lbrif"]
+[ext_resource type="PackedScene" uid="uid://bcmm5cd0nfdum" path="res://Scenes/DialogueEditor.tscn" id="4_330lp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1rpr"]
+
+[node name="Core" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3anhv")
+
+[node name="Editor" parent="." instance=ExtResource("2_r41ji")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Browser" parent="." instance=ExtResource("3_lbrif")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DialogueEditor" parent="." instance=ExtResource("4_330lp")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ShowEditor" type="Button" parent="ButtonsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "E"
+
+[node name="ShowBrowser" type="Button" parent="ButtonsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "B"
+
+[node name="ShowDialogueEditor" type="Button" parent="ButtonsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "D"
+
+[node name="SavedPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxEmpty_e1rpr")
+
+[node name="Margin" type="MarginContainer" parent="SavedPanel"]
+layout_mode = 2
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="RichTextLabel" type="Label" parent="SavedPanel/Margin"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Saved"
+horizontal_alignment = 1
+vertical_alignment = 1

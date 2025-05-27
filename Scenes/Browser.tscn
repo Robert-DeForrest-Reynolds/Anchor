@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx8cleyqrjgxh"]
+
+[ext_resource type="Script" uid="uid://e4yfo02k71pd" path="res://Scripts/Browser.gd" id="1_s60xn"]
+
+[node name="Browser" type="PanelContainer"]
+custom_minimum_size = Vector2(600, 600)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_s60xn")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SearchBox" type="LineEdit" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+placeholder_text = "Search..."
+
+[node name="Items" type="HBoxContainer" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Names" type="VBoxContainer" parent="VBox/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NameMargin" type="MarginContainer" parent="VBox/Items/Names"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="NameLabel" type="RichTextLabel" parent="VBox/Items/Names/NameMargin"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+text = "Name Label"
+fit_content = true
+selection_enabled = true
+
+[node name="Contents" type="VBoxContainer" parent="VBox/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ContentMargin" type="MarginContainer" parent="VBox/Items/Contents"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ContentLabel" type="RichTextLabel" parent="VBox/Items/Contents/ContentMargin"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+text = "Content Label"
+fit_content = true
+selection_enabled = true

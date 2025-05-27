@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://0qg7y5kuiow7"]
+
+[ext_resource type="Script" uid="uid://1oiqfgho6it8" path="res://Scripts/Editor.gd" id="1_0lbib"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5b7la"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5b7la"]
+bg_color = Color(0.197937, 0.197937, 0.197937, 1)
+
+[node name="Editor" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5b7la")
+script = ExtResource("1_0lbib")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 25
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="Name" type="TextEdit" parent="Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_5b7la")
+text = " "
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Text" type="TextEdit" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+wrap_mode = 1
+scroll_fit_content_width = true
