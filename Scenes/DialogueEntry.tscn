@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://m71g581et6jo"]
+
+[ext_resource type="Script" uid="uid://c3dvf5nb6ff1i" path="res://Scenes/DialogueEntry.gd" id="1_equq1"]
+
+[node name="Entry" type="HBoxContainer"]
+theme_override_constants/separation = 5
+script = ExtResource("1_equq1")
+
+[node name="CharacterName" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(265, 0)
+layout_mode = 2
+placeholder_text = "Character Name"
+
+[node name="Dialogue" type="TextEdit" parent="."]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "I am dialogue"
+wrap_mode = 1
+scroll_fit_content_height = true
+scroll_fit_content_width = true

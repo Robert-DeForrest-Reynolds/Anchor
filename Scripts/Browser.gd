@@ -1,4 +1,5 @@
 extends PanelContainer
+class_name Browser
 
 @onready var Items = %Browser.get_node("%Items")
 @onready var SearchBox = %Browser.get_node("%SearchBox")
