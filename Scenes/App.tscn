@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://deu8uflvd5mgj" path="res://Scripts/Core.gd" id="1_3anhv"]
 [ext_resource type="PackedScene" uid="uid://0qg7y5kuiow7" path="res://Scenes/Editor.tscn" id="2_r41ji"]
-[ext_resource type="PackedScene" uid="uid://cx8cleyqrjgxh" path="res://Scenes/Browser.tscn" id="3_lbrif"]
 [ext_resource type="PackedScene" uid="uid://bcmm5cd0nfdum" path="res://Scenes/DialogueEditor.tscn" id="4_330lp"]
+[ext_resource type="PackedScene" uid="uid://bwenb5vtkbvo" path="res://Scenes/BrowserV2.tscn" id="5_r41ji"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1rpr"]
 
@@ -19,7 +19,7 @@ script = ExtResource("1_3anhv")
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Browser" parent="." instance=ExtResource("3_lbrif")]
+[node name="Browser" parent="." instance=ExtResource("5_r41ji")]
 unique_name_in_owner = true
 layout_mode = 2
 

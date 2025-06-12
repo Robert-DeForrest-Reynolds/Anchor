@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcmm5cd0nfdum"]
 
-[ext_resource type="Script" uid="uid://m4er2pwnfn7h" path="res://Scenes/DialogueEditor.gd" id="1_cmkle"]
+[ext_resource type="Script" uid="uid://m4er2pwnfn7h" path="res://Scripts/DialogueEditor.gd" id="1_cmkle"]
 [ext_resource type="PackedScene" uid="uid://m71g581et6jo" path="res://Scenes/DialogueEntry.tscn" id="2_paj8d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ccm41"]

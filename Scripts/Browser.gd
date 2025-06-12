@@ -1,5 +1,4 @@
 extends PanelContainer
-class_name Browser
 
 @onready var Items = %Browser.get_node("%Items")
 @onready var SearchBox = %Browser.get_node("%SearchBox")
@@ -30,14 +29,14 @@ func Clear_Search_Box():
 func Search(NewText: String) -> void:
 	await get_tree().physics_frame
 	await Clear_Search_Box()
-	var Content = SearchBox.text
-	if Content == "":
+	var Source = SearchBox.text
+	if Source == "":
 		Initial_Search_Content_Load()
 	else:
-		Globals.LastSearchSize = Content.length()
+		Globals.LastSearchSize = Source.length()
 
 		for NoteKey in Globals.Notes:
-			if Content in NoteKey:
+			if Source.to_lower() in NoteKey.to_lower():
 				Insert_Search_Item(NoteKey, Globals.Notes[NoteKey])
 
 

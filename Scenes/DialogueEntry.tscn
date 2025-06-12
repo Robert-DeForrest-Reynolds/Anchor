@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://m71g581et6jo"]
 
-[ext_resource type="Script" uid="uid://c3dvf5nb6ff1i" path="res://Scenes/DialogueEntry.gd" id="1_equq1"]
+[ext_resource type="Script" uid="uid://c3dvf5nb6ff1i" path="res://Scripts/DialogueEntry.gd" id="1_equq1"]
 
 [node name="Entry" type="HBoxContainer"]
 theme_override_constants/separation = 5
