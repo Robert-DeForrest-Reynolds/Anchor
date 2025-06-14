@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ubnstxxdpkvp"]
+[gd_scene load_steps=7 format=3 uid="uid://ubnstxxdpkvp"]
 
 [ext_resource type="Script" uid="uid://deu8uflvd5mgj" path="res://Scripts/Core.gd" id="1_3anhv"]
 [ext_resource type="PackedScene" uid="uid://0qg7y5kuiow7" path="res://Scenes/Editor.tscn" id="2_r41ji"]
 [ext_resource type="PackedScene" uid="uid://bcmm5cd0nfdum" path="res://Scenes/DialogueEditor.tscn" id="4_330lp"]
+[ext_resource type="PackedScene" uid="uid://bd7krqe4yu64i" path="res://Tools.tscn" id="5_lbrif"]
 [ext_resource type="PackedScene" uid="uid://bwenb5vtkbvo" path="res://Scenes/BrowserV2.tscn" id="5_r41ji"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1rpr"]
@@ -15,39 +16,82 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3anhv")
 
-[node name="Editor" parent="." instance=ExtResource("2_r41ji")]
-unique_name_in_owner = true
+[node name="HBox" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Browser" parent="." instance=ExtResource("5_r41ji")]
-unique_name_in_owner = true
+[node name="Margin" type="MarginContainer" parent="HBox"]
 layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
-[node name="DialogueEditor" parent="." instance=ExtResource("4_330lp")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="ButtonsVBox" type="VBoxContainer" parent="."]
+[node name="ButtonsVBox" type="VBoxContainer" parent="HBox/Margin"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="ShowEditor" type="Button" parent="ButtonsVBox"]
+[node name="Storage" type="Button" parent="HBox/Margin/ButtonsVBox"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "E"
+text = "Storage"
 
-[node name="ShowBrowser" type="Button" parent="ButtonsVBox"]
+[node name="ShowCaptures" type="Button" parent="HBox/Margin/ButtonsVBox"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "B"
+text = "Captures"
 
-[node name="ShowDialogueEditor" type="Button" parent="ButtonsVBox"]
+[node name="ShowEditor" type="Button" parent="HBox/Margin/ButtonsVBox"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "D"
+text = "Editor"
 
-[node name="SavedPanel" type="PanelContainer" parent="."]
+[node name="ShowBrowser" type="Button" parent="HBox/Margin/ButtonsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Browser"
+
+[node name="ShowDialogueEditor" type="Button" parent="HBox/Margin/ButtonsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dialogue"
+
+[node name="ShowCharacters" type="Button" parent="HBox/Margin/ButtonsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Classifications"
+
+[node name="ShowEvents" type="Button" parent="HBox/Margin/ButtonsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Events"
+
+[node name="ShowTools" type="Button" parent="HBox/Margin/ButtonsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Tools"
+
+[node name="Panel" type="PanelContainer" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Editor" parent="HBox/Panel" instance=ExtResource("2_r41ji")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Browser" parent="HBox/Panel" instance=ExtResource("5_r41ji")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DialogueEditor" parent="HBox/Panel" instance=ExtResource("4_330lp")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Tools" parent="HBox/Panel" instance=ExtResource("5_lbrif")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SavedPanel" type="PanelContainer" parent="HBox/Panel"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -55,12 +99,12 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxEmpty_e1rpr")
 
-[node name="Margin" type="MarginContainer" parent="SavedPanel"]
+[node name="Margin" type="MarginContainer" parent="HBox/Panel/SavedPanel"]
 layout_mode = 2
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="RichTextLabel" type="Label" parent="SavedPanel/Margin"]
+[node name="RichTextLabel" type="Label" parent="HBox/Panel/SavedPanel/Margin"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "Saved"

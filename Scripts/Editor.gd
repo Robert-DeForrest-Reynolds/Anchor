@@ -29,11 +29,11 @@ func Load_Note(NoteName):
 	Globals.CurrentEditorContentName = NoteName
 	%Editor.get_node("%Name").text = NoteName
 	%Editor.get_node("%Text").text = Globals.Notes[NoteName]
-	Globals.Show("Editor")
+	Globals.Show("%Editor")
 
 
 func New_Note():
 	Globals.CurrentEditorContentName = "Untitled"
 	%Editor.get_node("%Name").text = "Untitled"
 	%Editor.get_node("%Text").text = ""
-	Globals.Show("Editor")
+	Globals.Show("%Editor")

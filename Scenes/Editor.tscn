@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://0qg7y5kuiow7"]
+[gd_scene load_steps=5 format=3 uid="uid://0qg7y5kuiow7"]
 
 [ext_resource type="Script" uid="uid://1oiqfgho6it8" path="res://Scripts/Editor.gd" id="1_0lbib"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5b7la"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lbib"]
+bg_color = Color(0.239216, 0.203922, 0.219608, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0475577, 0.0475577, 0.0475576, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5b7la"]
 bg_color = Color(0.197937, 0.197937, 0.197937, 1)
@@ -28,18 +41,39 @@ theme_override_constants/margin_bottom = 25
 [node name="VBox" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
 
-[node name="Name" type="TextEdit" parent="Margin/VBox"]
+[node name="Panel" type="PanelContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0lbib")
+
+[node name="Margin" type="MarginContainer" parent="Margin/VBox/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Name" type="TextEdit" parent="Margin/VBox/Panel/Margin"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-size_flags_vertical = 6
-size_flags_stretch_ratio = 0.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_5b7la")
-text = " "
+placeholder_text = "Untitled"
 scroll_fit_content_height = true
 scroll_fit_content_width = true
 
-[node name="Text" type="TextEdit" parent="Margin/VBox"]
+[node name="Panel2" type="PanelContainer" parent="Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0lbib")
+
+[node name="Margin" type="MarginContainer" parent="Margin/VBox/Panel2"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="TextEdit" parent="Margin/VBox/Panel2/Margin"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3

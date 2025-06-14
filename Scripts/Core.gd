@@ -16,10 +16,12 @@ func _ready() -> void:
 
 	%Editor.visible = false
 	%DialogueEditor.visible = false
+	%Tools.visible = false
 
-	%ShowEditor.pressed.connect(Globals.Show.bind("Editor"))
-	%ShowBrowser.pressed.connect(Globals.Show.bind("Browser"))
-	%ShowDialogueEditor.pressed.connect(Globals.Show.bind("DialogueEditor"))
+	%ShowEditor.pressed.connect(Globals.Show.bind("%Editor"))
+	%ShowBrowser.pressed.connect(Globals.Show.bind("%Browser"))
+	%ShowDialogueEditor.pressed.connect(Globals.Show.bind("%DialogueEditor"))
+	%ShowTools.pressed.connect(Globals.Show.bind("%Tools"))
 
 
 func _unhandled_input(Event:InputEvent):
